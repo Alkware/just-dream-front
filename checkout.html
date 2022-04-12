@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Just Dream - Apenas sonhe</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- FONT AWESOME! -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- CSS! -->
+    <link rel="stylesheet" href="./public/payment/checkout.css">
+    <link rel="stylesheet" href="./public/styles/global.css">
+    <!-- Javascritp! -->
+    <script src="https://sdk.mercadopago.com/js/v2" defer></script>
+    <script src="./public/payment/checkout.js" defer type="module"></script>
+    <!-- axios. -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container-cart">
+        <header>
+            <div class="firstHeader">
+                <div class="rede-sociais">
+                    <a href="https://www.facebook.com/Dicas-da-Diva-102654125618281" target="_blank"><i
+                            class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/nossa_justdream/" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href=" https://api.whatsapp.com/send/?phone=+55035991032698" target="_blank"><i
+                            class="fab fa-whatsapp"></i></a>
+                </div>
+                <p>Cansado das taxas de fretes? Aqui você tem <span> FRETE GRÁTIS</span>!😍</p>
+            </div>
+            <div class="secondHeader">
+                <div id="logo">
+                    <h1>Logo</h1>
+                </div>
+                <div class="box-login">
+                    <a href="/">Voltar ao site</a>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="add-address">
+                <h2>Endereço para entrega</h2>
+                <form action="">
+                    <div class="form-name same-row">
+                        <div class="form-first">
+                            <label for="first-name">Primeiro nome</label>
+                            <input type="text" data-checkout="first-name" name="first-name" placeholder="ex: João">
+                        </div>
+                        <div class="form-last">
+                            <label for="last-name">Sobrenome nome</label>
+                            <input type="text" data-checkout="last-name" name="last-name" placeholder="ex: Carvalho">
+                        </div>
+                    </div>
+                    <div class="form-only">
+                        <label for="cep">CEP:</label>
+                        <input type="number" data-checkout="cep" name="cep" placeholder="ex: 12345-679" minlength="1"
+                            maxlength="8">
+                    </div>
+                    <div class="form-address same-row">
+                        <div class="form-first">
+                            <label for="state">Estado</label>
+                            <input type="text" data-checkout="state" name="state">
+                        </div>
+                        <div class="form-last">
+                            <label for="city">Cidade</label>
+                            <input type="text" data-checkout="city" name="city">
+                        </div>
+                    </div>
+                    <div class="form-only">
+                        <label for="district">Bairro</label>
+                        <input type="text" data-checkout="district" name="district">
+                    </div>
+                    <div class="form-address-street same-row">
+                        <div class="form-first">
+                            <label for="street">Rua/Avenida</label>
+                            <input type="text" data-checkout="street" name="street">
+                        </div>
+                        <div class="form-last">
+                            <label for="number-house">Número</label>
+                            <input type="number" data-checkout="number-house" name="number-house">
+                        </div>
+                    </div>
+                    <div class="form-only">
+                        <label for="complement">Complemento</label>
+                        <input type="text" data-checkout="complement" name="complement">
+                    </div>
+                    <div class="form-only">
+                        <label for="cell-number">Telefone de contato</label>
+                        <input type="tel" data-checkout="cell-number" name="cell-number">
+                    </div>
+                    <label for="add-info">Indicações adicionais para entregar suas compras neste endereço.
+                        (opcional)</label>
+                    <input type="text" data-checkout="add-info" name="add-info">
+                </form>
+
+            </div>
+        </main>
+
+        <section>
+            <div class="product-description">
+                <!-- PRODUTOS ADICIONADOS DINAMICAMENTE COM JS. -->
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+            <div class="total">
+                <p>Entrega: <span>Grátis</span></p>
+                <p>Total com frete: <span id="total"></span></p>
+            </div>
+            <button class="button-payment">Finalizar compra</button>
+        </section>
+        <!-- FOOTER!  -->
+        <footer>
+            <div class="site-shopping-info">
+                <div class="store-info">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <h3>Escolha como pagar</h3>
+                    <p>Com o Mercado Pago, você paga com cartão, boleto ou Pix. Você também pode pagar em até 12x no
+                        boleto
+                        com o Mercado Crédito.</p>
+                    <a href="#">Veja todas as opições</a>
+                </div>
+                <div class="store-info">
+                    <i class="fa-solid fa-gift"></i>
+                    <h3>Frete grátis a partir de R$ 79</h3>
+                    <p>Só por estar cadastrado no Mercado Livre, você tem frete grátis em milhares de produtos. É um
+                        benefício do Mercado Pontos.</p>
+                    <a href="#">Use esse benefício</a>
+                </div>
+                <div class="store-info">
+                    <i class="fa-solid fa-lock"></i>
+                    <h3>Segurança, do início ao fim</h3>
+                    <p>Você não gostou do que comprou? Devolva! No Mercado Livre não há nada que você não possa fazer,
+                        porque você está sempre protegido.</p>
+                    <a href="#">Como te protegemos</a>
+                </div>
+            </div>
+            <div class="more-info">
+                <legend>Mais Informações</legend>
+                <div class="box-infos" id="box-infos">
+                    <div class="privacity">
+                        <h4>Segurança</h4>
+                        <a href="">Politica de privacidade</a>
+                        <a href="">Politica de reenbolso</a>
+                        <a href="">Termos e condições</a>
+                    </div>
+                    <div class="our-social-midia">
+                        <h4>Rede Sociais</h4>
+                        <a href="https://www.facebook.com/NossaJustDream" target="_blank">Facebook</a>
+                        <a href="https://www.instagram.com/nossa_justdream/" target="_blank">Instagram</a>
+                        <a href=" https://api.whatsapp.com/send/?phone=+55035992051754" target="_blank">Whatsapp</a>
+                    </div>
+                    <div class="about">
+                        <h4>Sobre</h4>
+                        <a href="">Sobre nós</a>
+                    </div>
+                    <div class="contact">
+                        <h4>Contato</h4>
+                        <a href="">Email</a>
+                        <a href=" https://api.whatsapp.com/send/?phone=+55035992051754" target="_blank">Whatsapp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="developers" id="developers">
+                <p>Site desenvolvido por:</p>
+                <p>@Alk-Company</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,383 @@
+header{
+    height: 50vh;
+    min-height: 400px;
+}
+header .banners{
+    height: 65%;
+}
+
+.benefits{
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+    width: 90%;
+    height: 10rem;
+    margin: 5rem auto;
+    position: relative;
+    box-shadow: 0px 0px 5px rgba(128, 128, 128, 0.4);
+    background-color: white;
+}
+
+.benefits .all-benefits{
+    width: 80%;
+    height: 85%;
+    display: flex;
+    overflow: hidden;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-left: .3rem solid var(--AzulMain);
+    border-right: .05rem solid rgba(128, 128, 128, 0.2);
+    margin-left: .5rem;
+}
+
+.benefits .all-benefits > div{
+    width: 25%;
+    min-width: 20rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .2rem;
+}
+.benefits .all-benefits > div:first-child{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 1rem;
+    font-size: clamp(.8rem, 1vw, 2rem);
+}
+.benefits .all-benefits > div:first-child > h2{
+    font-size: clamp(.8rem, 1.5vw, 2rem);
+    width: 100%;
+    text-align: left;
+    padding: 0;
+}
+.benefits .all-benefits > div:first-child > span{
+    font-size: clamp(.8rem, 1.2vw, 2rem);
+    width: 100%;
+    text-align: left;
+    padding: 0;
+}
+.benefits .all-benefits i,
+.benefits .all-benefits ~ div i{
+    color: var(--AzulMain);
+    font-size: clamp(1rem,2.5rem, 5vw);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.benefits .all-benefits div .text{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 1rem;
+    font-size: clamp(.8rem, 1.2vw, 2rem);
+}
+
+.benefits > div:last-of-type{
+    width: 18%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* FIM BENEFITS */
+
+main{
+    width: 100vw;
+    max-width: 1500px;
+}
+
+main .list-products{
+    height: auto;
+}
+
+section {
+    width: 90%;
+    height: auto;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+section  h2{
+    font-size: clamp(1.5rem, 2vw, 4rem);
+    color: var(--preto);
+    padding: 2rem 0 4rem 0;
+}
+section .style-box{
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+section .style-box > div{
+    width: 20%;
+    min-width: 13rem;
+    height: 35rem;
+    min-height: 30rem;
+    max-height: 400px;
+    margin: 2rem;
+    cursor: pointer;
+    position: relative;
+    border-radius: .3rem;
+    transition: .3s;  
+}
+section .style-box > div div.div-main-products{
+    background-color: white;
+    height: auto;
+}
+section .style-box > div:hover > div.div-main-products{
+    box-shadow: 1px 1px 10px #00000060;
+}
+section .style-box div:hover #free{
+    display: inline-flex;
+}
+section .style-box > div div.div-main-products > i{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    opacity: 0;
+    color: var(--AzulMain)
+}
+section .style-box div:hover div.div-main-products > i,
+section .style-box div:hover #oldprice,
+section .style-box div:hover p:last-of-type{
+    display: block;
+    height: auto;
+    opacity: 1;
+}
+section .style-box .rank{
+    padding: 1rem;
+    background-color: var(--AzulMain);
+    color: var(--branco);
+    font-size: clamp(1rem, 1.2vw, 4rem);
+    border-radius: 50%;
+    position: absolute;
+    top: 7%;
+    left: -7%;
+    box-shadow: -1px 1px 5px rgba(11, 168, 241, 0.7);
+    border: 1px solid rgb(216, 216, 216);
+    opacity: .8;
+}
+
+section .style-box div p:last-of-type{
+    opacity: 0;
+    display: none;
+}
+section .style-box > div div.div-main-products .div-container-img{
+    width: 100%;
+    height: 25rem;
+    overflow: hidden;
+}
+section .style-box > div div.div-main-products .div-container-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+section .style-box div #oldprice{
+    font-size: clamp(1rem, 1.1vw, 3rem);
+    display: block;
+    text-decoration: line-through;
+    margin-left: 1rem;
+    display: none;
+}
+
+section .style-box div .parceled{
+    font-size: clamp(.8rem, 1vw, 3rem);
+    margin-left: .5rem;
+    color: #24242480;
+}
+section .style-box div .parceled .parceled{
+    font-size: clamp(.8rem, 1vw, 3rem);
+    color: rgba(2, 138, 21, .8);
+    margin-left: 0;
+}
+section .style-box div #valueParceled{
+    font-size: clamp(.8rem, 1.5vw, 3rem);
+    color: #242424;
+}
+section .style-box div #price{
+    font-size: clamp(1.2rem, 1vw, 3rem);
+    margin: .5rem .5rem;
+    color: #24242490;
+}
+section .style-box div #free{
+    font-size: clamp(1.2rem, 1vw, 3rem);
+    color: rgba(2, 138, 21, .8);
+    margin-left: .5rem;
+}
+section .style-box div #free i{
+    font-size: clamp(1rem, 1vw, 3rem);
+    color: rgb(2, 138, 21);
+    margin-left: .8rem;
+}
+
+section .style-box div #describe{
+    font-size: clamp(1rem , 1vw, 3rem);
+    width: 100%;
+    text-align: center;
+    padding: .6rem 0 1rem 0;
+}
+/****
+**** ajustes no layout de cada section de produtos
+*****/
+section .see-more{
+    flex-flow: row wrap;
+    justify-content: center;
+}
+section .offers {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+section .offers > div,
+section .best-sellers > div{
+    width: 100%;
+    min-width: 18rem;
+    max-width: 23rem;
+    height: 30rem;
+}
+section .offers > div div.div-main-products,
+section .best-sellers > div div.div-main-products{
+    height: auto;
+}
+section .best-sellers > div div.div-main-products .div-container-img, 
+section .offers > div div.div-main-products .div-container-img{
+    height: 18rem;
+}
+section#section-offers:hover .button-next-right,
+section#section-offers:hover .button-next-left{
+    display: flex;
+    box-shadow: .1rem .1rem 10px rgba(0, 0, 0, 0.4);
+}
+section#section-offers > .button-next-right,
+section#section-offers > .button-next-left{
+    width: 4%;
+    height: 10%;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    cursor: pointer;
+    border: none;
+    z-index: 999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    opacity: .8;
+}
+section#section-offers > .button-next-left{
+    left: 0%;
+}
+
+section#section-offers > .button-next-right i,
+section#section-offers > .button-next-left i{
+    font-size: clamp(1rem , 2vw, 4rem);
+    color: var(--AzulMain);
+}
+
+/****
+**** SECTION BENEFITS
+*****/
+section.beneficts {
+    height: 60vh;
+}
+
+section div.beneficts-buy{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+section.beneficts .beneficts-buy div{
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 2px 10px #24242440;
+    cursor: pointer;
+}
+section.beneficts .beneficts-buy div:hover{
+    box-shadow: 2px 2px 10px #00000080;
+}
+
+section.beneficts .beneficts-buy div:first-of-type{
+    background: url(https://as2.ftcdn.net/v2/jpg/03/17/28/79/1000_F_317287988_0YuBHuQIcqMOHnNAkhOifeiDmFXKzj5q.jpg) no-repeat;
+    background-size: cover;
+    background-position: right center;
+    justify-self: flex-start;
+    align-self: flex-start;
+    
+}
+section.beneficts .beneficts-buy div:last-of-type{
+    background: url(https://as2.ftcdn.net/v2/jpg/03/14/20/99/1000_F_314209989_NwKevyiNyMvXcM4mMkWjhUn0TAyO4i6I.jpg) no-repeat;
+    background-size: cover;
+    background-position: left center;
+
+}
+
+
+section.beneficts .beneficts-buy div:first-of-type h2{
+    font-size: clamp(1rem , 1.6vw, 4rem);
+    padding: 4rem 3rem 2rem 3rem;
+    color: white;
+    background-color: #00000050;
+    width: 100%;
+}
+section.beneficts .beneficts-buy div:last-of-type h2{
+    font-size: clamp(1rem , 1.6vw, 4rem);
+    padding: 4rem 3rem 2rem 3rem;
+    color: white;
+    background-color: #00000050;
+    text-align: right;
+    width: 100%;
+}
+section.beneficts .beneficts-buy div:first-of-type p{
+    font-size: clamp(1rem , 1vw, 4rem);
+    padding: 0rem 3rem 2rem 3rem;
+    color: white;
+    background-color: #00000050;
+    width: 100%;
+}
+section.beneficts .beneficts-buy div:last-of-type p{
+    font-size: clamp(1rem , 1vw, 4rem);
+    padding: 0rem 3rem 2rem 3rem;
+    color: white;
+    background-color: #00000050;
+    text-align: right;
+    width: 100%;
+}
+
+section.beneficts .benefits-category{
+    margin-top: 12vh;
+    width: 100%;
+    height: 30%;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: row wrap;
+    padding: 0 10rem;
+    background-color: white;
+    border-radius: 10px;
+}
+section.beneficts .benefits-category div{
+    overflow: hidden;
+    height: 100%;
+    margin: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section.beneficts .benefits-category div img{
+    width: 50%;
+}
+section.beneficts .benefits-category div p{
+    width: 100%;
+    font-size: clamp(1rem, 1.2vw, 4rem);
+    text-align: center;
+    margin-top: 2rem;
+}

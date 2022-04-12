@@ -1,0 +1,444 @@
+header{
+    width: 100vw;
+    height: 18vh;
+    min-height: 0px;
+    background-color: #fff;
+}
+header .firstHeader{
+    height: 23%;
+}
+header .secondHeader{
+    height: 47%;
+}
+header .nav-menu{
+    height: 30%;
+}
+header .banners{
+    display: none;
+}
+/* fim header */
+main{
+    width: 100vw;
+    height: 89vh;
+    background-color: whitesmoke;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .content {
+    width: 95%;
+    height: 95%;
+    display: grid;
+    grid-template-columns: 10% 60% 30%; 
+    grid-template-rows: 100%;
+    grid-template-areas: 'smal big info';
+    background-color: white;
+}
+
+/** MI IMAGENS DO PRODUTO**/
+main .content .small-imgs{
+    grid-area: smal;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main .content .small-imgs img{
+    margin: 1% 0;
+    opacity: .6; 
+    cursor: pointer;
+}
+main .content .small-imgs img:hover {
+    opacity: 1;
+}
+/** IMAGEM PRINCIPAL DO PRODUTO **/
+main .content .big-img{
+    grid-area: big;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .content .big-img img{
+    transition: opacity .3s; 
+    width: 80%;
+}
+
+/** INFORMAÇÕES DO PRODUTO **/
+main .content .info{
+    min-width: 300px;
+    height: 98%;
+    grid-area: info;
+    margin: 2% 4%;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 2% 2%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+main .content .info > span:first-of-type{
+    opacity: .7;
+    font-size: max(1vw , .7rem);
+}
+
+main .content .info h1{
+    color: #444444;
+    font-size: max(2vw , 1rem);
+    font-weight: 400;
+    margin: 1% 0 2% 0;
+}
+main .content .info > span:nth-of-type(2){
+    opacity: .85;
+    font-size: max(1.2vw , 1rem);
+    margin-bottom: 2%;
+}
+main .content .info > div:first-of-type i{
+    color: var(--main);
+    margin: 1% 0;
+}
+main .content .info > div:first-of-type span{
+    opacity: .7;
+    cursor: pointer;
+}
+main .content .info > div:first-of-type span:hover{
+    text-decoration: underline;
+}
+
+main .content .info > p:first-of-type{
+    text-transform: uppercase;
+    padding: 2px 4px;
+    background-color: var(--main-shadow);
+    color: white;
+    width: 40%;
+    min-width: 150px;
+    text-align: center;
+    border-radius: 6px;
+    margin: 2% 0 1% 0;
+    font-size: max(1vw , 1rem);
+}
+
+main .content .info > div:nth-of-type(2){
+    margin: 2% 0;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+main .content .info > div:nth-of-type(2) span:nth-of-type(1){
+    font-size: max(1vw , .8rem);
+    margin: 0 1%;
+}
+main .content .info > div:nth-of-type(2) span:nth-of-type(2){
+    font-size: max(1.6vw , 1rem);
+    text-decoration: line-through;
+    opacity: .8;
+    margin: 0 1%;
+}
+main .content .info > div:nth-of-type(2) span:nth-of-type(3){
+    font-size: max(1vw , .8rem);
+    margin: 0 1%;
+}
+main .content .info > div:nth-of-type(2) span:nth-of-type(4){
+    font-size: max(2vw , 1.4rem);
+    margin: 0 1%;
+}
+
+
+main .content .info h3:first-of-type{
+    margin: 1% 0;
+    opacity: .9;
+}
+
+main .content .info img:first-of-type{
+    width: 100%;
+    margin: 2% auto;
+}
+
+main .content .info > p:nth-of-type(2) ,
+main .content .info > p:nth-of-type(2) i,
+main .content .info > p:nth-of-type(2) strong{
+    margin: 2% 0;
+    font-size: max(1.3vw , .9rem);
+    color: green;
+}
+
+main .content .info h3:nth-of-type(2){
+    margin: 1% 0;
+    font-size: max(1.3vw , .9rem);
+    font-weight: 400;
+    opacity: .9;
+}
+main .content .info #models{
+    display: flex;
+}
+
+main .content .info #models div{
+    opacity: .5;
+    width: 12%;
+    margin-left: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main .content .info #models div:hover,
+main .content .info #models div:hover span{
+    opacity: 1
+}
+main .content .info #models div.active,
+main .content .info #models div.active span{
+    opacity: 1;
+}
+main .content .info #models img{
+    border: 1px solid rgba(32, 32, 32, 0.5);
+    padding: 2px;
+    width: 100%;
+    cursor: pointer;
+}
+main .content .info #models span{
+    opacity: 0;
+    font-size: max(.9vw, .5rem);
+    width: 100%;
+    text-align: center;
+    transition: opacity .3s;
+}
+main .content .info #models img:hover ~ p{
+    opacity: 1;
+}
+main .content .info > p:nth-of-type(3){
+    margin: 1% 0;
+    font-size: max(1vw , .7rem );
+    font-weight: 700;
+}
+
+
+main .content .info .button{
+    width: 80%;
+    height: 8%;
+    min-height: 40px;
+    margin: 2% 0;
+    align-self: center ;
+}
+
+main .content .info .button button{
+    width: 100%;
+    height: 100%;
+    font-size: max(1.4vw , 1rem);
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    text-shadow: 0px 0px 5px var(--main-shadow);
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    transition: background .5s;
+}
+
+main .content .info .button  button:hover{
+    background-color: var(--main-shadow);
+}
+main .content .info button.button.secondButton{
+    height: 6%;
+    min-height: 2rem;
+    max-height: 4.5rem;
+}
+main .content .info .button .box-load{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(68, 68, 68, 0.6);
+    z-index: 999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+main .content .info .button .box-load .sub-box-load{
+    width: auto;
+    height: auto;
+    padding: 2%;
+    background-color: #444;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+
+}
+
+main .content .info .button .box-load .sub-box-load h2{
+    color: whitesmoke;
+    text-align: center;
+}
+
+main .content .info .button .box-load .sub-box-load .load{
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin-top: 4%;
+    border-radius: 50%;
+    background-color: gray;
+    justify-content: center;
+    align-items: flex-start;
+    animation: rotate-load 1s ease infinite;
+}
+
+main .content .info .button .box-load .sub-box-load .load .load2{
+    margin-top: 50%;
+    width: 20%;
+    height: 20%;
+    border-radius: 50%;
+    background-color: white;
+}
+
+@keyframes rotate-load {
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+main .content .info > .good-product{
+    width: 98%;
+    align-self: center;
+}
+
+
+main .content .info > .good-product p{
+    font-size: max(1.2vw ,.8rem);
+}
+
+main .content .info > .good-product p i{
+    color: green;
+}
+
+
+main .content .info > .good-product span{
+    font-size: max(1vw ,.8rem);
+    opacity: .8;
+}
+
+
+/*
+    FEEDBACKS
+*/
+
+.feedbacks{
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+}
+
+.feedbacks .clients-feedbacks{
+    width: 76%;
+}
+
+.feedbacks > h3{
+    font-size: max(3vw , 2rem);
+    margin-top: 8%;
+    color: var(--main-shadow-2);
+}
+
+.feedbacks .clients-feedbacks > div{
+    width: 100%;
+    height: auto;
+    background-color: white;
+    margin: 3% 2%;
+    padding: 2%;
+}
+
+.feedbacks .clients-feedbacks > div i{
+    color: var(--main);
+}
+
+.feedbacks .clients-feedbacks > div h3{
+    color: var(--main-shadow);
+    margin: 1% 0;
+}
+
+.feedbacks .clients-feedbacks > div p{
+    color: var(--main-shadow);
+    margin: 2%;
+    padding: 2%;
+    background-color: whitesmoke;
+    font-size: max(1.5vw , 1rem);
+    width: 80%;
+}
+.feedbacks .clients-feedbacks > div img{
+    width: 20%;
+    max-width: 200px;
+    height: 10%;
+    max-height: 250px;
+    margin-left: 1%;
+}
+.feedbacks .clients-feedbacks > div .likes {
+    width: 100%;
+    height: auto;
+    margin-top: 2%;
+}
+.feedbacks .clients-feedbacks > div .likes i{
+    cursor: pointer;
+    transition: color .3s;
+}
+.feedbacks .clients-feedbacks > div .likes i:hover{
+    color: black;
+}
+.feedbacks .clients-feedbacks > div .likes span{
+    margin: 0 10px 0 5px;
+}
+
+.feedbacks #your-feedback{
+    width: 100%;
+    background-color: whitesmoke;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.feedbacks #your-feedback > h3{
+    font-size: max(2.5vw , 1.5rem);
+    margin: 0;
+}
+.feedbacks #your-feedback > p{
+    font-size: max(1.5vw , 1rem);
+    text-align: center;
+    margin: 0;
+}
+.feedbacks #your-feedback > textarea{
+    font-size: max(1.8vw , 1rem);
+    width: 70%;
+    padding: 2rem;
+}
+
+section.feedbacks div.box-crear-feedback{
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background-color: #24242450;
+    justify-content: center;
+    align-items: center;
+}
+section.feedbacks div.box-crear-feedback .feedback{
+    background-color: white;
+}
+
+section.feedbacks div.box-crear-feedback .feedback .notes i:hover{
+    color: var(--AzulMain);
+    cursor: pointer;
+}
+section.feedbacks div.box-crear-feedback .notBuy{
+    display: none;
+}
+
+

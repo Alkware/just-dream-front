@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just Dream Company</title>
+    <!-- FONT AWESOME! -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- CSS! -->
+    <link rel="stylesheet" href="../public/styles/painel.css">
+    <!-- CDN AXIOS -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- SCRIPS -->
+    <script src="../public/scripts/painel.js" type="module" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <p>Bem-vindo <span id="nameUser"></span></p>
+            <a href="/index.html" target="_blank">Ver loja</a>
+        </header>
+        <div class="nav">
+            <ul>
+                <li id="fire-products"><i class="fa-solid fa-fire"></i> Produtos em ofertas</li>
+                <li id="stock"><i class="fa-solid fa-boxes-stacked"></i> Estoque</li>
+                <li id="categories"><i class="fa-solid fa-bars-staggered"></i> Categorias</li>
+                <li id="clients"><i class="fa-solid fa-user-group"></i> Clientes</li>
+                <li id="orders"><i class="fa-solid fa-arrow-up-wide-short"></i> Pedidos</li>
+                <li id="fire-products"><i class="fa-solid fa-image"></i></i> Banners</li>
+                <li id="fire-products"><i class="fa-solid fa-comments"></i> Suporte</li>
+                <li id="settings"><i class="fa fa-gears"></i> Configuração </li>
+                <li id="signout"><i class="fa-solid fa-right-to-bracket"></i> Sair </li>
+            </ul>
+
+        </div>
+        <div class="content">
+            <div class="loading"></div>
+            <div class="modal-products">
+                <button id="new_product">Novo produto</button>
+                <div class="table">
+                    <table>
+                        <thead>
+                            <th>#</th>
+                            <th>Nome</th>
+                            <th>Categoria</th>
+                            <th>Preço</th>
+                            <th>Vendas</th>
+                            <th>Ações</th>
+                        </thead>
+                        <tbody id="tbody_products">
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <div class="modal-categories">
+                <button id="new_category">Nova categoria</button>
+                <div class="table">
+                    <table>
+                        <thead>
+                            <th>#</th>
+                            <th>Categoria</th>
+                            <th>Qntd. Produtos</th>
+                            <td>Criada em</td>
+                            <th>Ações</th>
+                        </thead>
+                        <tbody id="tbody_categories">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-clients">
+                <div class="table">
+                    <table>
+                        <thead>
+                            <th>#</th>
+                            <th>Nome</th>
+                            <th>Usuario</th>
+                            <th>Compras Realizadas</th>
+                            <td>Criado em</td>
+                            <td>Ações</td>
+                        </thead>
+                        <tbody id="tbody_users">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-orders">
+                <div class="table">
+                    <table>
+                        <thead>
+                            <th>N° pedido</th>
+                            <th>Cliente</th>
+                            <th>produto</th>
+                            <th>qntd</th>
+                            <td>preço</td>
+                            <td>Data da compra</td>
+                            <td>Tempo de entrega</td>
+                            <td>status</td>
+                            <td>ações</td>
+                        </thead>
+                        <tbody id="tbody_orders">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-settings">
+                <p>Usuario da conta: </p><span>
+                    <%=nome%>
+                </span>
+                <p>Usuario: </p><span>
+                    <%=usuario%>
+                </span>
+                <p>Alterar senha:</p><span>*********</span><button>Alterar senha</button>
+            </div>
+
+            </table>
+        </div>
+
+        <!-- MODALS! -->
+        <!-- Modal para remover produto ou categoria. -->
+        <div class="modal-delete">
+            <div class="box-delete">
+                <p>Digite sua senha para remover</p>
+                <input type="password" name="" id="">
+                <div class="box-buttons">
+                    <button class="button red">Remover</button>
+                    <a href="#">Cancelar</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal para adicionar um novo produto -->
+
+        <div class="container-modals container-products">
+            <div class="box-modal">
+                <fieldset>
+                    <legend>Insira um novo produto</legend>
+                    <form action="">
+                        <label for="idWoo">id WooCommerce</label>
+                        <input type="number" name="idWoo" id="idWoo">
+                        <label for="nameProduct">Nome do produto</label>
+                        <input type="text" name="nameProduct" id="nameProduct">
+                        <label for="describeProduct">Descrição do produto</label>
+                        <input type="text" name="describeProduct" id="describeProduct">
+                        <label for="oldPrice">Preço</label>
+                        <input type="number" name="oldPrice" id="oldPrice">
+                        <label for="price">Preço promocional</label>
+                        <input type="number" name="price" id="price">
+                        <label for="category">Categoria</label>
+                        <select name="category" id="category">
+                        </select>
+                        <label for="video1">link do video</label>
+                        <input type="text" name="video1" id="video1">
+                        <label for="video2">link do video (opcional)</label>
+                        <input type="text" name="video2" id="video2">
+                        <label for="img1">Imagem do produto</label>
+                        <input type="text" name="img1" id="img1">
+                        <label for="img2">Imagem do produto</label>
+                        <input type="text" name="img2" id="img2">
+                        <label for="img3">Imagem do produto</label>
+                        <input type="text" name="img3" id="img3">
+                        <label for="img4">Imagem do produto</label>
+                        <input type="text" name="img4" id="img4">
+                        <label for="offen">Produto em oferta</label>
+                        <input type="number" name="offen" id="offen" max="1" min="0" value="0">
+                        <span id="idOcult" style="visibility: hidden;"></span>
+                        <button id="add_product">Adicionar novo produto</button>
+                    </form>
+                </fieldset>
+            </div>
+        </div>
+
+        <!-- modal para adicionar uma nova categoria -->
+        <div class="container-modals container-category">
+            <div class="box-modal">
+                <fieldset>
+                    <legend>Insira uma nova categoria</legend>
+                    <form action="">
+                        <span id="idOcultCategory" style="visibility: hidden;"></span>
+                        <label for="nameCategory">Nome da categoria</label>
+                        <input type="text" name="nameCategory" id="nameCategory">
+                        <label for="background">Imagem de fundo</label>
+                        <input type="text" name="background" id="background">
+                        <label for="imgMain">Imagem principal</label>
+                        <input type="text" name="imgMain" id="imgMain">
+                        <button id="add_category">Adicionar nova categoria</button>
+                    </form>
+                </fieldset>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>

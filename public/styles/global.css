@@ -1,0 +1,745 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,900;1,400&display=swap');
+:root{
+    --AzulMain: #009ee3;
+    --AzulSecond: #028cc7;
+    --darkAzul: #00577c;
+    --branco: #F5F5F5;
+    --preto: #242424;
+    --background: #E7E7E7;
+}
+*{
+    padding: 0;margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    color: var(--preto);
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    background-color: var(--background);
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container-every-things{
+    width: 100vw;
+    max-width: 1600px;
+    height: auto;
+    position: relative;
+}
+
+header{
+    width: 100vw;
+    height: 40vh;
+    min-height: 500px;
+    background-color: #fff;
+}
+header.cart{
+    width: 100vw;
+    height: 18vh;
+    min-height: 0px;
+    background-color: #fff;
+}
+header > .firstHeader.cart-first-header{
+    height: 23%;
+}
+header > .secondHeader.cart-second-header{
+    height: 47%;
+}
+header > .nav-menu.cart-nav-menu{
+    height: 30%;
+}
+
+/***** firstheader */
+header > .firstHeader{
+    width: 100%;
+    height: 8%;
+    display: flex;
+    align-items: center;
+    background-color: var(--branco);
+    border-bottom: .5px solid #00000008;
+}
+header > .firstHeader .rede-sociais{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+}
+header > .firstHeader .rede-sociais a{ /* contem a tag i dentro da tag a */
+    margin: 0 3%;
+    font-size: max(1.4vw, .8rem);
+    cursor: pointer;
+}
+header > .firstHeader p{
+    font-size: clamp(1.2rem, 1vw, 4rem);
+    text-align: center;
+    width: 50%;
+    color: var(--preto);
+}
+header > .firstHeader p span{
+    color: green;
+    font-weight: 500;
+}
+/****** Secondheader */
+header > .secondHeader{
+    width: 100%;
+    height: 15%;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0% 2%;
+}
+header > .secondHeader div#logo{
+    width: 15%;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header > .secondHeader div#logo h1{
+    font-weight: bold;
+    font-size: 3rem;
+    font-family: cursive;
+}
+header > .secondHeader > div#logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+header > .secondHeader > .logo h2:last-child{
+    display: none; 
+ }
+header > .secondHeader > .search{
+    width: 50%;
+    min-width: 20rem;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: .05rem solid rgba(94, 94, 94, 0.2);
+    box-shadow: 1px 1px 5px #00000030;
+    border-radius: .8rem;
+}
+header > .secondHeader > .search input{
+    width: 90%;
+    outline: none;
+    border: none;
+    padding: 1% 2%;
+    background: transparent;
+    border-right: .5px solid #00000050;
+    font-size: min(2.3vw, 2rem);
+}
+header > .secondHeader .search > i{
+    font-size: 2rem;
+    opacity: .5;
+    margin: auto;
+    cursor: pointer;
+    color: black;
+}
+header > .secondHeader .search input::placeholder{
+    font-size: min(2.3vw, 1.8rem);
+    opacity: .4;
+}
+header > .secondHeader > .info-buy{
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header > .secondHeader .info-buy > span{
+    display: none;
+}
+header > .secondHeader .info-buy i{
+    font-size: clamp(2rem, 2.1vw, 4rem);
+    color: rgb(182, 13, 13);
+    position: relative;
+    cursor: pointer;
+}
+header > .secondHeader .info-buy i:last-of-type{
+    color: var(--AzulMain);
+}
+header > .secondHeader .info-buy i span{
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    font-size: clamp(1rem, 1vw , 3rem);
+    padding: .2rem .5rem;
+    border-radius: 50%;
+    background-color: var(--branco);
+}
+
+header > .nav-menu{
+    width: 100%;
+    height: 10%;
+    background-color: transparent;
+    display: flex;
+    border-top: .5px solid #00000007;
+}
+header > .nav-menu .rede-sociais{
+    display: none;
+}
+
+header > .nav-menu .nav{
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+header > .nav-menu nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    height: 100%;
+    text-align: center;
+}
+header > .nav-menu nav ul{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+header > .nav-menu nav ul::after{
+    content: '';
+    width: 0%;
+    height: 4px;
+    background-color: var(--AzulMain);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width .3s;
+}
+header > .nav-menu nav ul:hover::after{
+    width: 100%;
+    height: 4px;
+}
+header > .nav-menu nav ul:hover a{
+    color: var(--AzulMain);
+}
+
+header > .nav-menu nav li{
+    list-style: none;
+    font-size: clamp(1.2rem, 1vw, 3rem);
+}
+header > .nav-menu nav li a{
+    text-decoration: none;
+    color: var(--preto);
+    transition: color .3s
+}
+
+header > .nav-menu nav ul:first-of-type .combo-box-categories{
+    background-color:var(--branco);
+    width: 200%;
+    height: auto;
+    position: absolute;
+    top: 100%;
+    left: -50%;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1;
+    transition: .2s ;
+}
+
+header > .nav-menu nav ul:first-of-type .combo-box-categories.show-combo-box{
+    visibility: visible;
+    opacity: 1;
+}
+header > .nav-menu nav ul:first-of-type .combo-box-categories li{
+    display: block;
+    padding: .6rem 0;
+    width: 100%;
+    margin: .6rem 0;
+    transition: background .4s ease;
+}
+header > .nav-menu nav ul:first-of-type .combo-box-categories li:hover{
+    background-color: var(--AzulMain);
+    color: white;
+}
+
+header > .nav-menu div.box-login{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 25%;
+    height: 100%;
+}
+header > .nav-menu div.box-login ul{
+    margin: 0 2rem;
+    font-size: clamp(1.2rem, 1vw, 3rem);
+}
+header > .nav-menu div.box-login ul a{
+    font-size: clamp(1.2rem, 1vw, 4rem);
+    text-decoration: none;
+    transition: .2s;
+}
+header > .nav-menu div.box-login ul:hover a{
+    color: var(--AzulMain);
+}
+header > .nav-menu div.Logged{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 25%;
+    height: 100%;
+    cursor: pointer;
+    position: relative;
+}
+header > .nav-menu div.Logged h2{
+    margin: 0 2rem;
+    font-weight: 500;
+    font-size: clamp(1.2rem, 1vw, 3rem);
+    transition: .2s;
+}
+header > .nav-menu div.Logged:hover h2{
+    color: var(--AzulMain);
+}
+header > .nav-menu div.Logged img{
+    border-radius: 50%;
+    width: 8%;
+    min-width: 2.4rem;
+}
+
+header > .nav-menu div.Logged div.box-options{
+    visibility: hidden;
+    opacity: 0;
+    background-color: white;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+    width: 70%;
+    min-width: 15rem;
+    position: absolute;
+    border-radius: 0 0 1rem .5rem;
+    top: 100%;
+    right: 0;
+    z-index: 999;
+}
+header > .nav-menu div.Logged div.box-options.show-box-options{
+    visibility: visible;
+    opacity: 1;
+}
+
+header > .nav-menu div.Logged div.box-options li{
+    list-style: none;
+    width: 100%;
+    padding: 1rem 0 1rem 4rem;
+    font-size: clamp(1.2em , 1vw, 4rem);
+    transition: background .2s
+}
+header > .nav-menu div.Logged div.box-options li:hover{
+    background-color: #00000010;
+}
+
+
+header > .banners{
+    width: 100%;
+    height: 67%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    order: 4;
+}
+header > .banners img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+header > .banners #title-category{
+    display: none;
+    position: absolute;
+    align-self: flex-end;
+    font-size: clamp(4rem, 4.5vw, 10rem);
+    color: var(--branco);
+    text-shadow: 0px 0px 7px var(--preto);
+}
+/* FIM HEADER */
+
+.button{
+    background-color: var(--AzulSecond);
+    color: var(--branco);
+    padding: 1rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    border-radius: .5rem;
+    transition: .3s;
+}
+.button:hover{
+    background-color: var(--AzulMain);
+    opacity: .8;
+}
+.button.secondButton{
+    background-color: #71a7bfb4;
+}
+
+/******* FOOTER */
+
+footer{
+    width: 100%;
+    height: auto;
+    background-color: white;
+}
+footer .site-shopping-info{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+footer .site-shopping-info .store-info{
+    width: 25%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+footer .site-shopping-info .store-info i{
+    color: var(--AzulMain);
+    font-size: clamp(2rem, 3vw, 5rem);
+    padding: 6rem 0 1rem 0;
+}
+
+footer .site-shopping-info .store-info h3{
+    font-size: clamp(1.2rem, 1.5vw, 4rem);
+    padding: 1rem 0;
+}
+
+footer .site-shopping-info .store-info p{
+    font-size: clamp(1rem, 1vw, 3rem);
+}
+
+footer .site-shopping-info .store-info a{
+    font-size: clamp(1rem, 1.2vw, 3rem);
+    padding: 1rem;
+}
+
+footer .more-info{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer .more-info legend{
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-bottom: 2px solid var(--branco);
+    padding: 1rem 3rem;
+    background-color: var(--branco);
+    transform: translateY(2px);
+    font-size: clamp(1rem, 1.2vw, 4rem);
+    z-index: 1;
+}
+
+footer .more-info .box-infos{
+    border-top: 1px solid #ccc;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    background-color: var(--branco);
+    display: flex;
+    justify-content: center;
+    transition: .3s;
+}
+
+footer .more-info .box-infos.show-infos{
+    height: 250px;
+}
+
+footer .more-info .box-infos div{
+    width: 20%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer .more-info .box-infos div h4{
+    margin: 6rem 0 2rem 0;
+    font-size: clamp(1rem, 1.5vw, 5rem);
+}
+footer .more-info .box-infos div a{
+    padding: 2%;
+    font-size: clamp(1rem, 1vw, 5rem);
+}
+
+footer .developers{
+    width: 100%;
+    padding: 4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.historico .box-historico{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+
+
+
+/* MODALS */
+/* Modal wishlish. */
+.container-modals{
+    width: 100%;
+    height: 100%;
+    background-color: #00000020;
+    position: fixed;
+    top: 0;
+    z-index: 998;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.container-modals .box-wishlist{
+    position: relative;
+    width: 40%;
+    min-width: 350px;
+    height: 50%;
+    min-height: 380px;
+    background-color: var(--background);
+    border-radius: 10px;
+    padding: 1rem;
+    border: 1px solid var(--darkAzul);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.container-modals .box-wishlist > span:first-of-type{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: clamp(1rem, 1.2vw, 3rem);
+    padding: .3rem .5rem;
+    cursor: pointer;
+    color: var(--darkAzul);
+    font-weight: bold;
+}
+
+.container-modals .box-wishlist h2{
+    color: var(--darkAzul);
+    text-align: center;
+    font-size: clamp(1rem, 1.3vw, 3rem);
+    margin: 1rem 0 3rem 0;
+}
+
+.container-modals .box-wishlist .table{
+    width: 100%;
+    height: 50%;
+    overflow: auto;
+}
+
+.container-modals .box-wishlist table{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.container-modals .box-wishlist table tr{
+    width: 100%;
+    background-color: var(--branco);
+    font-size: clamp(1rem, 1vw, 4rem);
+}
+.container-modals .box-wishlist table tr td{
+    width: 25%;
+    padding: 1rem;
+    text-align: center;
+}
+.container-modals .box-wishlist table tr td:nth-of-type(2){
+    width: 50%;
+}
+.container-modals .box-wishlist table tr td:first-of-type{
+    width: 15%;
+}
+.container-modals .box-wishlist table tr td:last-of-type{
+    width: 10%;
+}
+
+.container-modals .box-wishlist .totalWishList{
+    width: 50%;
+    height: 40px;
+    margin: 2rem auto;
+    border-radius: 1.5rem;
+    border: 1px dotted #023c8850;
+    padding: 1rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.container-modals .box-wishlist .totalWishList span:last-of-type{
+    font-size: clamp(1rem, 1.5vw, 4rem);
+}
+
+.container-modals .box-wishlist button{
+    width: 50%;
+    min-width: 120px;
+    min-height: 35px;
+    align-self: center;
+    margin: auto;
+}
+
+.container-modals .box-wishlist p{
+    font-size: clamp(1rem, 1.2vw, 4rem);
+    padding: 1rem 4rem;
+    text-align: center;
+    opacity: .7;
+}
+
+/* modal about us */
+
+.container-modals .box-about-us{
+    position: relative;
+    width: 80%;
+    height: 80%;
+    background-color: var(--background);
+    border-radius: 10px;
+    padding: 3rem;
+    display: flex;
+    z-index: 999;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+}
+
+.container-modals .box-about-us > span:first-of-type{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    background: var(--AzulMain);
+    font-size: clamp(1rem, 1.2vw, 3rem);
+    padding: .3rem .5rem;
+    cursor: pointer;
+    color: var(--branco);
+    font-weight: bold;
+}
+
+.container-modals .box-about-us h2{
+    margin: 2rem;
+}
+
+.container-modals .box-about-us .content-about-us{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 'img1 txt1 txt1'
+                         'txt2 txt2 img2';
+}
+
+.container-modals .box-about-us .content-about-us img{
+    grid-area: img1;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.container-modals .box-about-us .content-about-us p:nth-of-type(1){
+    grid-area: txt1;
+    padding: 2rem;
+    font-size: clamp(1rem, 1.5vw, 4rem);
+    text-indent: 3rem;
+}
+.container-modals .box-about-us .content-about-us p#txt2{
+    grid-area: txt2;
+    padding: 2rem;
+    font-size: clamp(1rem, 1.5vw, 4rem);
+    text-indent: 3rem;
+}
+.container-modals .box-about-us .content-about-us img:nth-of-type(2){
+    grid-area: img2;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.container-modals.container-login .modal-login{
+    background-color: white;
+    width: 30%;
+    padding: 4rem 0;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.container-modals.container-login .modal-login #closeLogin{
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    font-size: clamp(1rem, 1.5vw, 4rem);
+    padding: .5rem;
+}
+
+.container-modals.container-login .modal-login p{
+    font-size: clamp(1rem , 1.2vw, 4rem);
+    padding: 1rem 4rem;
+    text-align: center;
+}
+
+.container-modals.container-login .modal-login button,
+.container-modals.container-login .modal-login div#buttonDiv{
+    width: 60%;
+    margin: 2rem 0;
+    cursor: pointer;
+}
+
+.container-modals.container-login .modal-login hr{
+    width: 80%;
+    opacity: .3;
+}
+
+.container-modals.container-login .modal-form-register{
+    background-color: white;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+    position: relative;
+}
+.container-modals.container-login .modal-form-register span#closeLogin{
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    font-size: clamp(1rem, 1.5vw, 4rem);
+    padding: .5rem;
+}
+.container-modals.container-login .modal-form-register span.fa-solid{
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    font-size: clamp(1rem, 1.5vw, 4rem);
+    padding: .5rem;
+}
+.container-modals.container-login .modal-form-register input,
+.container-modals.container-login .modal-form-register a{
+    margin: 1rem;
+}
+.container-modals.container-login .modal-form-register .form-add-info{
+    display: none;
+    flex-direction: column;
+}

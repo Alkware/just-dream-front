@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just Dream - Apenas Sonhe.</title>
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--  CSS  -->
+    <link rel="stylesheet" href="/public/styles/global.css">
+    <link rel="stylesheet" href="/public/styles/index.css">
+    <link rel="stylesheet" href="/public/styles/rpsv-home.css">
+    <!-- AXIOS -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- JAVASCRIPT -->
+    <!-- scripts -->
+    <script src="public/scripts/index.js" type="module" defer></script>
+    <!-- login with google -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://unpkg.com/jwt-decode/build/jwt-decode.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="firstHeader">
+            <div class="rede-sociais">
+                <a href="https://www.facebook.com/Dicas-da-Diva-102654125618281" target="_blank"><i
+                        class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/nossa_justdream/" target="_blank"><i
+                        class="fab fa-instagram"></i></a>
+                <a href=" https://api.whatsapp.com/send/?phone=+55035991032698" target="_blank"><i
+                        class="fab fa-whatsapp"></i></a>
+            </div>
+            <p>Cansado das taxas de fretes? Aqui você tem <span> FRETE GRÁTIS</span>!😍</p>
+        </div>
+        <div class="secondHeader">
+            <div id="logo">
+                <h1>Logo</h1>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Oque você está procurando hoje?">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="info-buy">
+                <i class="fas fa-heart"><span></span></i>
+                <i class="fa fa-cart-arrow-down"><span></span></i>
+                <div class="menu-mobile">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div class="nav-menu">
+            <div class="rede-sociais">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-whatsapp"></i>
+            </div>
+            <div class="nav">
+                <nav>
+                    <ul>
+                        <li><a href="#" id="ul-category">Categorias </a><i class="fa fa-angle-down"></i></li>
+                        <div class="combo-box-categories"></div>
+                    </ul>
+                    <ul>
+                        <li><a href="/index.html#offer-day" id="ul-offerday">Ofertas do dia</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#" id="ul-aboutus">Sobre nós</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#" id="ul-contact">Contato</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="/index.html#historico" id="ul-historic">Histórico</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#" id="ul-wishlist">Lista de Desejos</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="box-login">
+                <ul>
+                    <a href="#">Crie uma conta</a>
+                </ul>
+                <ul>
+                    <a href="#">Entre</a>
+                </ul>
+            </div>
+        </div>
+        <div class="banners">
+            <img src="https://http2.mlstatic.com/storage/splinter-admin/o:f_webp,q_auto:best/1642759020679-home-sliderdesktop.jpg"
+                alt="">
+        </div>
+    </header>
+
+    <div class="container-every-things">
+        <section class="benefits">
+            <div class="all-benefits">
+                <div>
+                    <h2>Pagamento seguro</h2>
+                    <span>com Mercado Pago</span>
+                </div>
+                <div>
+                    <i class="fas fa-credit-card"></i>
+                    <div class="text">
+                        Até 12 vezes sem juros
+                        <a href="#">Ver mais</a>
+                    </div>
+                </div>
+                <div>
+                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                    <div class="text">
+                        Parcelado no boleto
+                        <a href="#">Ver mais</a>
+                    </div>
+                </div>
+                <div>
+                    <i class="fa fa-mobile-screen-button"></i>
+                    <div class="text">
+                        Via Pix
+                        <a href="#">Ver mais</a>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <i class="fas fa-plus-circle"></i>
+            </div>
+        </section>
+
+        <section class="offers-day" id="offer-day">
+            <h2>Ofertas do dia:</h2>
+            <div class="offers">
+                <!-- Será preenchido dinamicamente pelo javascript os produtos em oferta! -->
+            </div>
+        </section>
+
+        <section class="categories">
+            <h2>Nossas categorias</h2>
+            <div class="box-categories">
+                <!-- Div preenchida dinamicamente pelo javascript. -->
+            </div>
+        </section>
+
+        <section id="historico">
+            <h2>Visto recentemente</h2>
+            <div class="offers">
+                <!-- Div preenchida dinamicamente pelo javascript. -->
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="site-shopping-info">
+            <div class="store-info">
+                <i class="fa-solid fa-credit-card"></i>
+                <h3>Escolha como pagar</h3>
+                <p>Com o Mercado Pago, você paga com cartão, boleto ou Pix. Você também pode pagar em até 12x no
+                    boleto
+                    com o Mercado Crédito.</p>
+                <a href="#">Veja todas as opições</a>
+            </div>
+            <div class="store-info">
+                <i class="fa-solid fa-gift"></i>
+                <h3>Frete grátis a partir de R$ 79</h3>
+                <p>Só por estar cadastrado no Mercado Livre, você tem frete grátis em milhares de produtos. É um
+                    benefício do Mercado Pontos.</p>
+                <a href="#">Use esse benefício</a>
+            </div>
+            <div class="store-info">
+                <i class="fa-solid fa-lock"></i>
+                <h3>Segurança, do início ao fim</h3>
+                <p>Você não gostou do que comprou? Devolva! No Mercado Livre não há nada que você não possa fazer,
+                    porque você está sempre protegido.</p>
+                <a href="#">Como te protegemos</a>
+            </div>
+        </div>
+        <div class="more-info">
+            <legend>Mais Informações</legend>
+            <div class="box-infos" id="box-infos">
+                <div class="privacity">
+                    <h4>Segurança</h4>
+                    <a href="">Politica de privacidade</a>
+                    <a href="">Politica de reenbolso</a>
+                    <a href="">Termos e condições</a>
+                </div>
+                <div class="our-social-midia">
+                    <h4>Rede Sociais</h4>
+                    <a href="https://www.facebook.com/NossaJustDream" target="_blank">Facebook</a>
+                    <a href="https://www.instagram.com/nossa_justdream/" target="_blank">Instagram</a>
+                    <a href=" https://api.whatsapp.com/send/?phone=+55035992051754" target="_blank">Whatsapp</a>
+                </div>
+                <div class="about">
+                    <h4>Sobre</h4>
+                    <a href="">Sobre nós</a>
+                </div>
+                <div class="contact">
+                    <h4>Contato</h4>
+                    <a href="">Email</a>
+                    <a href=" https://api.whatsapp.com/send/?phone=+55035992051754" target="_blank">Whatsapp</a>
+                </div>
+            </div>
+        </div>
+        <div class="developers" id="developers">
+            <p>Site desenvolvido por:</p>
+            <p>@Alk-Company</p>
+        </div>
+    </footer>
+    <!-- MODALS -->
+    <!-- Modal lista de desejos -->
+    <div class="container-modals container-wishlist">
+        <div class="box-wishlist">
+            <span>X</span>
+            <h2>Lista de desejos</h2>
+            <div class="table">
+                <table>
+                    <tbody id="tbody_wishlist">
+                        <!-- preenchido automaticamente -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="totalWishList">
+                <span id="totalWishList"></span>
+            </div>
+            <button class="button">Adicionar ao carrinho</button>
+            <p id="messageWishList"></p>
+        </div>
+    </div>
+
+    <!-- Modal sobre nos -->
+    <div class="container-modals container-about-us">
+        <div class="box-about-us">
+            <span id="close-modal-about-us">X</span>
+            <h2>Just Dream - Apenas Sonhe</h2>
+            <h3 id="title-about-us">Sobre nós</h3>
+            <div class="content-about-us">
+                <img src="https://www.agendor.com.br/images/illustrations/quem-somos-agendor.png" alt="quem somos">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est minus voluptatum cumque illum
+                    doloremque a incidunt expedita voluptates perferendis saepe sunt tempora mollitia aliquid nobis
+                    alias consequuntur, blanditiis repellat? Aut ipsa dolorem omnis delectus aspernatur velit earum
+                    dicta ea vel molestiae tempora, at reiciendis nam aperiam ratione voluptatem assumenda
+                    blanditiis
+                    expedita accusantium officiis culpa necessitatibus! Necessitatibus inventore nobis molestias!
+                    Mollitia rerum dolore asperiores quas ipsam veritatis eveniet temporibus, quia exercitationem,
+                    voluptates eius nemo repellendus, quam nam itaque magni eligendi optio fugit dolores quisquam?
+                    Obcaecati, ex! Temporibus minima odio velit neque deserunt maxime vero eligendi ullam ut!
+                    Accusantium possimus ea deserunt?</p>
+                <p id="txt2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium, fugiat! Enim ex
+                    deserunt sequi, tempora culpa suscipit voluptatem, sit quo tempore exercitationem, nemo alias
+                    rem! At magni assumenda pariatur sapiente aspernatur, vitae eaque similique doloremque corrupti
+                    possimus eum. Sunt, placeat! Molestias beatae repellat eligendi recusandae? Sit dolorem iure
+                    totam quam.</p>
+                <img src="https://image.shutterstock.com/image-vector/profession-delivery-goods-isolated-design-260nw-443515597.jpg"
+                    alt="">
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal login -->
+    <div class="container-modals container-login">
+        <div class="modal-login">
+            
+           
+        </div>
+
+        <div class="modal-form-register">
+            <span class="fa-solid fa-arrow-left"></span>
+            <span id="closeLogin">X</span>
+            <input type="text" name="registerName" id="registerName" placeholder="Nome">
+            <input type="text" name="registerUser" id="registerUser" placeholder="Usuario">
+            <input type="password" name="registerPass" id="registerPass" placeholder="Senha">
+            <input type="password" name="registerConfirmPass" id="registerConfirmPass" placeholder="Confirme sua senha">
+            <a href="#">Adicionar Informações opcionais <i class="fa fa-angle-down"></i></a>
+            <div class="form-add-info" >
+                <input type="text" id="registerLastName" placeholder="Sobrenome">
+                <input type="text" id="registerCep" placeholder="CEP">
+                <input type="text" id="registerCellNumber" placeholder="Número de telefone">
+            </div>
+            <button class="button">Criar conta</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

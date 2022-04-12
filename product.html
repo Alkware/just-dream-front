@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- AXIOS -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./public/styles/global.css">
+    <link rel="stylesheet" href="./public/styles/product.css">
+    <!-- SCRIPT! -->
+    <script src="./public/scripts/global.js" type="module" defer></script>
+    <script src="./public/scripts/product.js" type="module" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="firstHeader">
+            <div class="rede-sociais">
+                <a href="https://www.facebook.com/Dicas-da-Diva-102654125618281" target="_blank"><i
+                        class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/nossa_justdream/" target="_blank"><i
+                        class="fab fa-instagram"></i></a>
+                <a href=" https://api.whatsapp.com/send/?phone=+55035991032698" target="_blank"><i
+                        class="fab fa-whatsapp"></i></a>
+            </div>
+            <p>Cansado das taxas de fretes? Aqui você tem <span> FRETE GRÁTIS</span>!😍</p>
+        </div>
+        <div class="secondHeader">
+            <div id="logo">
+                <h1>Logo</h1>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Oque você está procurando hoje?">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="info-buy">
+                <i class="fas fa-heart"><span></span></i>
+                <i class="fa fa-cart-arrow-down"><span></span></i>
+                <div class="menu-mobile">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div class="nav-menu">
+            <div class="rede-sociais">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-whatsapp"></i>
+            </div>
+            <div class="nav">
+                <nav>
+                    <ul>
+                        <li><a href="#" id="ul-category">Categorias </a><i class="fa fa-angle-down"></i></li>
+                        <div class="combo-box-categories"></div>
+                    </ul>
+                    <ul>
+                        <li><a href="/index.html#offer-day" id="ul-offerday">Ofertas do dia</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#" id="ul-aboutus">Sobre nós</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#" id="ul-contact">Contato</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="/index.html#historico" id="ul-historic">Histórico</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#" id="ul-wishlist">Lista de Desejos</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="box-login">
+                <ul>
+                    <a href="#">Crie uma conta</a>
+                </ul>
+                <ul>
+                    <a href="#">Entre</a>
+                </ul>
+            </div>
+        </div>
+        <div class="banners">
+            <img src="https://http2.mlstatic.com/storage/splinter-admin/o:f_webp,q_auto:best/1642759020679-home-sliderdesktop.jpg"
+                alt="">
+        </div>
+    </header>
+
+    <!-- conteudo principal -->
+    <div class="container-every-things">
+        <main>
+            <div class="content">
+                <div class="small-imgs">
+                    <img id="img1" src="" alt="" width="70%">
+                    <img id="img2" src="" alt="" width="70%">
+                    <img id="img3" src="" alt="" width="70%">
+                    <img id="img4" src="" alt="" width="70%">
+                </div>
+                <div class="big-img">
+                    <video width="90%" height="80%" controls autoplay>
+
+                    </video>
+                </div>
+                <div class="info" id="info">
+                    <span id="number-orders"></span>
+                    <h1 id="name"></h1>
+                    <span id="describe"></span>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half"></i>
+                        <a href="#feedbacks">13 Avaliações</a>
+                    </div>
+                    <p>mais vendido</p>
+                    <div>
+                        <span>de</span>
+                        <span id="old_price"></span>
+                        <span>por 12x</span>
+                        <span id="price"></span>
+                    </div>
+                    <h3>Meios de pagamentos:</h3>
+                    <img src="https://www.dicasdadonadiva.com.br/images/meios-de-pagamento-justdream.png" alt="">
+                    <p><i class="fas fa-truck"></i> FRETE GRÁTIS <strong><i class="fas fa-bolt"></i> FULL</strong></p>
+                    <h3>Modelo:</h3>
+                    <div id="models"></div>
+                    <p>Estoque Limitado - 125 unidades restantes</p>
+                    <div class="button">
+                        <button>Comprar agora</button>
+                        <div class="box-load">
+                            <div class="sub-box-load">
+                                <h2>Aguarde enquanto estamos processando seu pedido</h2>
+                                <div class="load">
+                                    <div class="load2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="buttonAddToCart" class="button secondButton">Adicionar ao carrinho</button>
+                    <div class="good-product">
+                        <p><i class="fas fa-check"></i> Entrega rápida</p>
+                        <span>Entrega Expressa de 1 á 2 semanas em sua casa.</span>
+                        <p><i class="fas fa-check"></i> Devolução grátis</p>
+                        <span>Você tem 30 dias a partir da data de recebimento.</span>
+                        <p><i class="fas fa-check"></i> Produto origem de fabrica</p>
+                        <span>preparado e enviado direto da fabrica até sua casa</span>
+                        <p><i class="fas fa-check"></i> Frete grátis</p>
+                        <span>Sem taxas adicionais na entrega, você paga só o produto</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- sessão de comentarios -->
+        <section class="feedbacks">
+            <h3>Comentarios</h3>
+            <div class="clients-feedbacks"></div>
+            <div id="your-feedback">
+                <h3>Seu produto já chegou?</h3>
+                <p>Deixe seu feedback conosco</p>
+                <textarea name="feedback" id="feedback" cols="100" rows="7"></textarea>
+                <button class="button">Enviar</button>
+            </div>
+    
+            <div class="box-crear-feedback">
+                <div class="feedback">
+                    <h2>De uma nota ao produto</h2>
+                    <div class="notes">
+                        <i class="far fa-star">1</i>
+                        <i class="far fa-star">2</i>
+                        <i class="far fa-star">3</i>
+                        <i class="far fa-star">4</i>
+                        <i class="far fa-star">5</i>
+                    </div>
+                    <h2>Deseja deixar imagens do seu produto?</h2>
+                    <div class="imgs">
+                        <div class="img-one">
+                            <input type="url" name="" id="img1" placeholder="Cole sua url da imagem aqui">
+                            <input type="file" name="" id="">
+                        </div>
+                        <div class="img-two">
+                            <input type="url" name="" id="img2" placeholder="Cole sua url da imagem aqui">
+                            <input type="file" name="" id="">
+                        </div>
+                        <div class="img-three">
+                            <input type="url" name="" id="img3" placeholder="Cole sua url da imagem aqui">
+                            <input type="file" name="" id="">
+                        </div>
+                    </div>
+                    <button class="button">Enviar</button>
+                </div>
+                <div class="notBuy">
+                    <span>X</span>
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Falha ao deixar seu feedback</h3>
+                    <p>Apenas usuários que já adquiriram o produto podem deixar comentários</p>
+                    <a href="">Compre já o seu</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <!-- FOOTER!  -->
+    <footer>
+        <div class="site-shopping-info">
+            <div class="store-info">
+                <i class="fa-solid fa-credit-card"></i>
+                <h3>Escolha como pagar</h3>
+                <p>Com o Mercado Pago, você paga com cartão, boleto ou Pix. Você também pode pagar em até 12x no boleto
+                    com o Mercado Crédito.</p>
+                <a href="#">Veja todas as opições</a>
+            </div>
+            <div class="store-info">
+                <i class="fa-solid fa-gift"></i>
+                <h3>Frete grátis a partir de R$ 79</h3>
+                <p>Só por estar cadastrado no Mercado Livre, você tem frete grátis em milhares de produtos. É um
+                    benefício do Mercado Pontos.</p>
+                <a href="#">Use esse benefício</a>
+            </div>
+            <div class="store-info">
+                <i class="fa-solid fa-lock"></i>
+                <h3>Segurança, do início ao fim</h3>
+                <p>Você não gostou do que comprou? Devolva! No Mercado Livre não há nada que você não possa fazer,
+                    porque você está sempre protegido.</p>
+                <a href="#">Como te protegemos</a>
+            </div>
+        </div>
+        <div class="more-info">
+            <legend>Mais Informações</legend>
+            <div class="box-infos" id="box-infos">
+                <div class="privacity">
+                    <h4>Segurança</h4>
+                    <a href="">Politica de privacidade</a>
+                    <a href="">Politica de reenbolso</a>
+                    <a href="">Termos e condições</a>
+                </div>
+                <div class="our-social-midia">
+                    <h4>Rede Sociais</h4>
+                    <a href="https://www.facebook.com/NossaJustDream" target="_blank">Facebook</a>
+                    <a href="https://www.instagram.com/nossa_justdream/" target="_blank">Instagram</a>
+                    <a href=" https://api.whatsapp.com/send/?phone=+55035992051754" target="_blank">Whatsapp</a>
+                </div>
+                <div class="about">
+                    <h4>Sobre</h4>
+                    <a href="">Sobre nós</a>
+                </div>
+                <div class="contact">
+                    <h4>Contato</h4>
+                    <a href="">Email</a>
+                    <a href=" https://api.whatsapp.com/send/?phone=+55035992051754" target="_blank">Whatsapp</a>
+                </div>
+            </div>
+        </div>
+        <div class="developers" id="developers">
+            <p>Site desenvolvido por:</p>
+            <p>@Alk-Company</p>
+        </div>
+    </footer>
+
+    <!-- MODALS -->
+
+    <div class="container-modals">
+        <div class="box-wishlist">
+            <span>X</span>
+            <h2>Lista de desejos</h2>
+            <div class="table">
+                <table>
+                    <tbody id="tbody_wishlist">
+                        <!-- preenchido automaticamente -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="totalWishList">
+                <span id="totalWishList"></span>
+            </div>
+            <button class="button">Adicionar ao carrinho</button>
+            <p id="messageWishList"></p>
+        </div>
+    </div>
+    <div class="container-modals container-login">
+        <div class="modal-login">
+            <span id="closeLogin">X</span>
+            <button>Criar com Just Dream</button>
+            <hr>
+            <button>Criar conta com google</button>
+        </div>
+
+        <div class="modal-form-register">
+            <form action="">
+                <input type="text" name="registerName" id="registerName">
+                <input type="text" name="registerUser" id="registerUser">
+                <input type="password" name="registerPass" id="registerPass">
+                <input type="password" name="registerConfirmPass" id="registerConfirmPass">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

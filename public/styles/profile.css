@@ -1,0 +1,190 @@
+header{
+    width: 100vw;
+    height: 15vh;
+    min-height: 0px;
+    background-color: var(--AzulMain);
+}
+header .firstHeader{
+    height: 30%;
+    background-color: var(--branco);
+}
+header .secondHeader{
+    height: 70%;
+}
+header .nav-menu{
+    display: none;
+}
+header .banners{
+    display: none;
+}
+
+header .secondHeader div.box-profile{ 
+    width: 40%;
+    min-width: 20rem;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+
+header .secondHeader div.box-profile img{
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+    object-fit: cover;
+}
+
+header .secondHeader div.box-profile span{
+    font-size: clamp(1.5rem , 1.2vw, 4rem);
+    width: 70%;
+    display: flex;
+    flex-flow: row nowrap;
+    transition: color .3s;
+    margin: 0.5rem;
+    justify-content: flex-end;
+}
+
+header .secondHeader div.box-profile:hover span{
+    color: white;
+}
+
+header .secondHeader div.box-profile div#out{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: auto;
+    z-index: 999;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+    opacity: 0;
+}
+header .secondHeader div.box-profile div#out.show-profile{
+    visibility: visible;
+    opacity: 1;
+}
+
+header .secondHeader div.box-profile div#out button{
+    border: none;
+    outline: none;
+    margin: .2rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+header .secondHeader div.box-profile div#out button:hover{
+    background-color: white;
+}
+
+
+body > .container{
+    width: 100%;
+    height: 100%;
+    max-width: 150rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* main  */
+
+main div#links{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 3rem 0;
+}
+main div#links button{
+    margin: 0 1rem;
+    cursor: pointer;
+    padding: 1rem;
+    border: none;
+    background-color: transparent;
+    position: relative;
+    outline: none;
+}
+main div#links button::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--AzulMain);
+    transition: .3s;
+}
+main div#links button:hover::after,
+main div#links button:focus::after{
+    width: 100%;
+}
+
+main section{
+ width: 100%;
+ padding: 2rem;
+}
+
+main section .box-header-profile{
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main section .box-header-profile img{
+    width: 70%;
+    height: 70%;
+    object-fit: cover;
+    margin: 0 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+main section .info-profile{
+    display: flex;
+    flex-direction: column;
+}
+
+main section input{
+    border: none;
+    background-color: transparent;
+    margin: 1rem 0;
+    border-radius: 1rem;
+    padding: .5rem;
+}
+main section .info-profile button{
+    cursor: pointer;
+}
+main section .info-profile a{
+    color: darkred;
+}
+
+.container-modals .modal-password{
+    padding: 3rem;
+    background-color: var(--branco);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-modals .modal-password input{
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.container-modals .modal-password button{
+    cursor: pointer;
+}
+
+.container-modals .modal-password input#new-password,
+.container-modals .modal-password input#confirm-password{
+    display: none;
+}

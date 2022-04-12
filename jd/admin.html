@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just Dream - Painel administrativo</title>
+    <!-- CSS! -->
+    <link rel="stylesheet" href="../public/styles/global.css">
+    <link rel="stylesheet" href="../public/styles/admin.css">
+    <!-- SCRIPS! -->
+    <script src="../public/scripts/admin.js" type="module" defer></script>
+    <!-- AXIOS -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div class="loading"></div>
+    <div class="container">
+        <div class="box-login">
+            <h1>Painel administrativo Just Dream</h1>
+            <form action="#">
+                <input type="text" name="usuario" placeholder="Usuario">
+                <input type="password" name="password" placeholder="Senha">
+                <span id="errorMessage">Login ou senha invalidos!</span>
+                <input type="submit" value="Acessar">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+
+:root{
+    --AzulMain: #009ee3;
+    --AzulSecond: #028cc7;
+    --darkAzul: #00577c;
+    --branco: #F5F5F5;
+    --preto: #242424;
+    --background: #E7E7E7;
+}
+*{
+    padding: 0;margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--preto);
+    scroll-behavior: smooth;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    background-color: var(--background);
+}
+
+/* CONTAINER */
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    overflow-x: hidden;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 10% 90%;
+    grid-template-areas: 
+    'header content'
+     'nav content';
+}
+
+.container header{
+    grid-area: header;
+    background-color: var(--AzulMain);
+    display: grid;
+    place-items: center;
+    font-size: clamp(1.2rem, 1.3vw, 4rem);
+    font-weight: bold;
+}
+.container .nav{
+    grid-area: nav;
+}
+.container .nav ul li{
+    text-align: center;
+    font-size: clamp(1.5rem, 1vw, 4rem);
+    padding: 2rem 0;
+    margin: 1.5rem 0;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.container .content{
+    grid-area: content;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .content .loading{
+    width: 8rem;
+    height: 8rem;
+    margin-bottom: 30rem;
+    border-top: 2px solid var(--AzulMain);
+    border-radius: 50%;
+    display: none; 
+    animation: rotate-loading 1s linear infinite;
+}
+@keyframes rotate-loading {
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.container .content .table{
+    width: 93%;
+    margin: 2rem auto;
+    height: 90vh;
+    overflow-y: auto;
+}
+
+.container .content table{
+    width: 100%;
+    background-color: white;
+    text-align: center;
+}
+.container .content table thead{
+    background-color: #6ca8c2;
+    color: white;
+    font-size: clamp(1.2rem, 1.1vw, 4rem);
+}
+.container .content table th:first-of-type{
+    padding: 2rem 0;
+}
+.container .content table td{
+    padding: 1rem 0;
+    font-size: clamp(1.2rem, 1vw, 4rem);
+}
+.container .content table td i{
+    margin: 1rem;
+    transition: transform .3s;
+}
+.container .content table td i:hover{
+    margin: 1rem;
+    cursor: pointer;
+    transform: scale(1.4);
+}
+.container .content table td i:last-of-type{
+    color: rgb(150, 11, 11);
+}
+
+.modal-products, 
+.modal-categories,
+.modal-clients, 
+.modal-orders, 
+.modal-settings{
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100%);
+    transition: opacity .3s, transform .2s;
+}
+.modal-products.show-modal, 
+.modal-categories.show-modal, 
+.modal-clients.show-modal, 
+.modal-orders.show-modal, 
+.modal-settings.show-modal{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    width: 100%;
+}
+
+.modal-delete{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0%;
+    background-color: #24242440;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-delete .box-delete{
+    width: 30%;
+    height: 25%;
+    background-color: var(--branco);
+    display: flex;
+    flex-direction: column;
+}
+
+/* CONTAINER MODAL */
+
+.container-modals{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #24242450;
+    place-items: center;
+}
+
+.container-modals > .box-modal{
+    width: 50%;
+    height: 100%;
+    background-color: var(--background);
+
+}
+.container-modals .box-modal fieldset {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-modals .box-modal fieldset legend{
+    text-align: center;
+}
+
+.container-modals .box-modal fieldset form{
+    display: flex;
+    flex-direction: column;
+}
+
+.container-modals .box-modal fieldset form input {
+    text-align: center;
+}
+
+
+/* CSS GLOBAL!!! */
+
+.button{
+    background-color: var(--AzulMain);
+    cursor: pointer;
+}
+.button.red{
+    background-color: rgb(161, 8, 8);
+    color: white;
+}
